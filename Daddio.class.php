@@ -24,7 +24,7 @@ class SkinDaddio extends SkinTemplate {
 	function setupSkinUserCss( OutputPage $out ){
 		global $wgScriptPath;
 
-		$path = "{$wgScriptPath}/extensions/skins/Daddio";
+		$path = "{$wgScriptPath}/skins/Daddio";
 
 		// Do not call parent::setupSkinUserCss(), we have our own print style
 		$out->addStyle( 'common/shared.css', 'screen' );
