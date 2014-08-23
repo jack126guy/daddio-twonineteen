@@ -32,12 +32,10 @@ $wgMessagesDirs['SkinDaddio'] = __DIR__ . '/i18n';
 
 $wgResourceModules['skins.daddio'] = array(
 	'styles' => array(
-		// @Lcawte: this probably isn't the most kosher way to do this, but it's
-		// how most/all ShoutWiki skins do it and it works for our setup at
-		// least. Feel free to improve it :D
-		'skins/Daddio/daddio/main.css' => array( 'media' => 'screen' ),
-		'skins/Daddio/daddio/print.css' => array( 'media' => 'print' )
+		'daddio/main.css' => array( 'media' => 'screen' ),
+		'daddio/print.css' => array( 'media' => 'print' )
 	),
 	'position' => 'top',
-	//'localBasePath' => __DIR__,
+	'localBasePath' => __DIR__,
+	'remoteSkinPath' => 'Daddio',
 );

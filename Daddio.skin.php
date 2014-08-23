@@ -20,7 +20,7 @@ class SkinDaddio extends SkinTemplate {
 		$template = 'DaddioTemplate', $useHeadElement = true;
 
 	function setupSkinUserCss( OutputPage $out ) {
-		$out->addModuleStyles( 'skin.daddio' );
+		$out->addModuleStyles( array( 'skins.daddio', 'mediawiki.legacy.shared' ) );
 	}
 }
 
