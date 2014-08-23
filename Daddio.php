@@ -22,5 +22,14 @@ $wgExtensionCredits['skin'][] = array(
 );
 
 $wgValidSkinNames['daddio'] = 'Daddio';
-$wgAutoloadClasses['SkinDaddio'] = dirname( __FILE__ ) . "/Daddio.class.php";
+$wgAutoloadClasses['SkinDaddio'] = __DIR__ . "/Daddio.skin.php";
 $wgMessagesDirs['SkinDaddio'] = __DIR__ . '/i18n';
+
+$wgResourceModules['skins.daddio'] = array(
+	'styles' => array(
+		'daddio/main.css' => array( 'media' => 'screen' ),
+		'daddio/print.css' => array( 'media' => 'print' )
+//		'daddio/rtl.css', 'screen', '', 'rtl' );
+	),
+	'localBasePath' => __DIR__,
+);

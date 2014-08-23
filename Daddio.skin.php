@@ -10,7 +10,7 @@ if( !defined( 'MEDIAWIKI' ) )
 
 global $IP;
 // @todo Fixme: autoload ModernTemplate
-require_once( "$IP/skins/Modern.php" );
+require_once( "$IP/skins/Modern/Modern.php" );
 
 /**
  * Inherit main code from SkinTemplate, set the CSS and template filter.
@@ -18,19 +18,11 @@ require_once( "$IP/skins/Modern.php" );
  * @ingroup Skins
  */
 class SkinDaddio extends SkinTemplate {
-	var $skinname = 'daddio', $stylename = 'daddio',
+	public $skinname = 'daddio', $stylename = 'daddio',
 		$template = 'DaddioTemplate', $useHeadElement = true;
 
 	function setupSkinUserCss( OutputPage $out ){
-		global $wgScriptPath;
-
-		$path = "{$wgScriptPath}/skins/Daddio";
-
-		// Do not call parent::setupSkinUserCss(), we have our own print style
-		$out->addStyle( 'common/shared.css', 'screen' );
-		$out->addStyle( "$path/daddio/main.css", 'screen' );
-		$out->addStyle( "$path/daddio/print.css", 'print' );
-		$out->addStyle( "$path/daddio/rtl.css", 'screen', '', 'rtl' );
+		$out->addModules( 'skin.daddio' );
 	}
 
 }
@@ -40,6 +32,8 @@ class SkinDaddio extends SkinTemplate {
  * @ingroup Skins
  */
 class DaddioTemplate extends ModernTemplate {
+	public $skin;
+
 	/**
 	 * Template filter callback for Daddio skin.
 	 * Takes an associative array of data set from a SkinTemplate-based
@@ -50,9 +44,6 @@ class DaddioTemplate extends ModernTemplate {
 	 */
 	function execute() {
 		$this->skin = $skin = $this->data['skin'];
-		
-		// Suppress warnings to prevent notices about missing indexes in $this->data
-		wfSuppressWarnings();
 
 		$this->html( 'headelement' );
 
@@ -63,13 +54,13 @@ class DaddioTemplate extends ModernTemplate {
 	<div id="mw_contentwrapper">
 	<!-- navigation portlet -->
 	<div class="portlet" id="p-cactions">
-      <h5><?php $this->msg('views') ?></h5>
+	<h5><?php $this->msg('views') ?></h5>
 		<div class="pBody">
 			<ul>
 	<?php			foreach($this->data['content_actions'] as $key => $tab) { ?>
 				 <li id="ca-<?php echo Sanitizer::escapeId($key) ?>"<?php
 					 	if($tab['class']) { ?> class="<?php echo htmlspecialchars($tab['class']) ?>"<?php }
-					 ?>><a href="<?php echo htmlspecialchars($tab['href']) ?>"<?php echo $skin->tooltipAndAccesskey('ca-'.$key) ?>><?php
+					 ?>><a href="<?php echo htmlspecialchars($tab['href']) ?>"<?php echo $skin->tooltipAndAccesskeyAttribs('ca-'.$key) ?>><?php
 					 echo htmlspecialchars($tab['text']) ?></a></li>
 	<?php			 } ?>
 			</ul>
@@ -109,7 +100,7 @@ class DaddioTemplate extends ModernTemplate {
 	<div id="mw_portlets">
 
 	<?php 
-		$sidebar = $this->data['sidebar'];		
+		$sidebar = $this->data['sidebar'];
 		if ( !isset( $sidebar['SEARCH'] ) ) $sidebar['SEARCH'] = true;
 		if ( !isset( $sidebar['TOOLBOX'] ) ) $sidebar['TOOLBOX'] = true;
 		if ( !isset( $sidebar['LANGUAGES'] ) ) $sidebar['LANGUAGES'] = true;
@@ -142,7 +133,7 @@ class DaddioTemplate extends ModernTemplate {
 <?php 			foreach($this->data['personal_urls'] as $key => $item) { ?>
 				<li id="pt-<?php echo Sanitizer::escapeId($key) ?>"<?php
 					if ($item['active']) { ?> class="active"<?php } ?>><a href="<?php
-				echo htmlspecialchars($item['href']) ?>"<?php echo $skin->tooltipAndAccesskey('pt-'.$key) ?><?php
+				echo htmlspecialchars($item['href']) ?>"<?php echo $skin->tooltipAndAccesskeyAttribs('pt-'.$key) ?><?php
 				if(!empty($item['class'])) { ?> class="<?php
 				echo htmlspecialchars($item['class']) ?>"<?php } ?>><?php
 				echo htmlspecialchars($item['text']) ?></a></li>
@@ -181,7 +172,6 @@ class DaddioTemplate extends ModernTemplate {
 </div> <!-- bottom of page --> 
 </body></html>
 <?php
-	wfRestoreWarnings();
 	} // end of execute() method
 } // end of class
 
