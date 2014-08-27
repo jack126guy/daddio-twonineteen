@@ -18,7 +18,7 @@ $wgExtensionCredits['skin'][] = array(
 	'name' => 'Daddio',
 	// @todo FIXME: add a meaningful version number
 	'author' => array( 'Rufus Post', 'Aaron Schulz' ),
-	'description-msg' => 'daddio-desc',
+	'descriptionmsg' => 'daddio-desc',
 	'url' => 'https://www.mediawiki.org/wiki/Skin:Daddio',
 );
 

@@ -11,6 +11,7 @@ ul {
 	list-style-type: square;
 	margin: .3em 0 0 1.3em;
 	padding: 0;
+	/* @embed */
 	list-style-image: url(bullet.gif);
 }
 ol {
@@ -88,6 +89,7 @@ div.portlet_top {
 	padding: 0 0 0 0;
 	display: block;
 	height: 25px;
+	/* @embed */
 	background: url(toolbar-bg.png);
 }
 
@@ -111,6 +113,7 @@ div.portlet_top {
 }
 
 #p-personal li:hover {
+	/* @embed */
 	background: url(buttonred.png);
 }
 
@@ -174,18 +177,21 @@ div.portlet p {
 .generated-sidebar.portlet h5 {
 	width: 90%;
 	height: 64px;
+	/* @embed */
 	background: url(navbox.png) center right no-repeat;
 }
 
 #p-search h5 {
 	width: 90%;
 	height: 64px;
+	/* @embed */
 	background: url(searchbox.png) center right no-repeat;
 }
 
 #p-tb h5 {
 	width: 90%;
 	height: 64px;
+	/* @embed */
 	background: url(toolbox.png) center right no-repeat;
 }
 
@@ -208,6 +214,7 @@ textarea {
 	height: 1.3em;
 	padding: 0 0 0 0;
 	margin: 0 0 0 14em;
+	/* @embed */
 	background: url(edit.png) center right no-repeat;
 	background-color: #E9E9E9;
 	border: solid 1px #bbbbbb;
@@ -265,6 +272,7 @@ textarea {
 
 #footer {
 	background-color: #f0f0f0;
+	/* @embed */
 	background: url(footer-grad.png) repeat-x 0 0;
 	padding: 10px 1em 1em 1em;
 	clear:both;
@@ -400,30 +408,36 @@ h1, h2 {
 
 #mw_content a.external,
 #mw_content a[href ^="gopher://"] {
+	/* @embed */
         background: url(external.png) center right no-repeat;
         padding-right: 13px;
 }
 #mw_content a[href ^="https://"],
 .link-https {
+	/* @embed */
         background: url(lock_icon.gif) center right no-repeat;
         padding-right: 16px;
 }
 #mw_content a[href ^="mailto:"],
 .link-mailto {
+	/* @embed */
         background: url(mail_icon.gif) center right no-repeat;
         padding-right: 18px;
 }
 #mw_content a[href ^="news://"] {
+	/* @embed */
         background: url(news_icon.png) center right no-repeat;
         padding-right: 18px;
 }
 #mw_content a[href ^="ftp://"],
 .link-ftp {
+	/* @embed */
         background: url(file_icon.gif) center right no-repeat;
         padding-right: 18px;
 }
 #mw_content a[href ^="irc://"],
 .link-irc {
+	/* @embed */
         background: url(discussionitem_icon.gif) center right no-repeat;
         padding-right: 18px;
 }
@@ -435,6 +449,7 @@ h1, h2 {
 #mw_content a.external[href $=".wav"], #mw_content a.external[href $=".WAV"],
 #mw_content a.external[href $=".wma"], #mw_content a.external[href $=".WMA"],
 .link-audio {
+	/* @embed */
         background: url("audio.png") center right no-repeat;
         padding-right: 13px;
 }
@@ -443,6 +458,7 @@ h1, h2 {
 #mw_content a.external[href $=".mpeg"], #mw_content a.external[href $=".MPEG"],
 #mw_content a.external[href $=".mpg"], #mw_content a.external[href $=".MPG"],
 .link-video {
+	/* @embed */
         background: url("video.png") center right no-repeat;
         padding-right: 13px;
 }
@@ -450,6 +466,7 @@ h1, h2 {
 #mw_content a.external[href *=".pdf#"], #mw_content a.external[href *=".PDF#"],
 #mw_content a.external[href *=".pdf?"], #mw_content a.external[href *=".PDF?"],
 .link-document {
+	/* @embed */
         background: url("document.png") center right no-repeat;
         padding-right: 12px;
 }
@@ -842,10 +859,6 @@ input#wpSummary {
 /* @bug 1714 */
 input#wpSave, input#wpDiff {
 	margin-right: 0.33em;
-}
-
-#editform .editOptions {
-	display: inline;
 }
 
 #wpSave {
