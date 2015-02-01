@@ -78,7 +78,7 @@ class DaddioTemplate extends ModernTemplate {
 				?><div class="mw-topbox" id="siteNotice"><?php $this->html( 'sitenotice' ) ?></div>
 			<?php } ?>
 		</div>
-		<div id="mw_header"><h1 id="firstHeading" class="firstHeading" lang="<?php $this->text( 'pageLanguage' ); ?>"><span dir="auto"><?php $this->html( 'title' ) ?></span></h1></div>
+		<div id="mw_header"><h1 id="firstHeading" class="firstHeading" lang="<?php $this->text( 'pageLanguage' ); ?>"><?php $this->html( 'title' ) ?></h1></div>
 		<div id="contentSub"><?php $this->html( 'subtitle' ) ?></div>
 
 		<?php if ( $this->data['undelete'] ) { ?><div id="contentSub2"><?php $this->html( 'undelete' ) ?></div><?php } ?>
