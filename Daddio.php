@@ -25,10 +25,10 @@ $wgExtensionCredits['skin'][] = array(
 $wgValidSkinNames['daddio'] = 'Daddio';
 // *cough cough* assumptions...
 if ( !isset( $wgAutoloadClasses['ModernTemplate'] ) ) {
-	$wgAutoloadClasses['ModernTemplate'] = __DIR__ . '/../Modern/SkinModern.php';
+	$wgAutoloadClasses['ModernTemplate'] = dirname(__FILE__) . '/../Modern.php';
 }
-$wgAutoloadClasses['SkinDaddio'] = __DIR__ . '/Daddio.skin.php';
-$wgMessagesDirs['SkinDaddio'] = __DIR__ . '/i18n';
+$wgAutoloadClasses['SkinDaddio'] = dirname(__FILE__) . '/Daddio.skin.php';
+$wgMessagesDirs['SkinDaddio'] = dirname(__FILE__) . '/i18n';
 
 $wgResourceModules['skins.daddio'] = array(
 	'styles' => array(
@@ -36,6 +36,6 @@ $wgResourceModules['skins.daddio'] = array(
 		'daddio/print.css' => array( 'media' => 'print' )
 	),
 	'position' => 'top',
-	'localBasePath' => __DIR__,
+	'localBasePath' => dirname(__FILE__),
 	'remoteSkinPath' => 'Daddio',
 );
