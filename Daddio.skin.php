@@ -40,7 +40,7 @@ class DaddioTemplate extends ModernTemplate {
 	public function execute() {
 		$this->skin = $this->data['skin'];
 
-		$this->data['pageLanguage'] = $this->skin->getTitle()->getPageViewLanguage()->getHtmlCode();
+		$this->data['pageLanguage'] = $this->skin->getTitle()->getPageLanguage()->getHtmlCode();
 
 		$this->html( 'headelement' );
 ?>
